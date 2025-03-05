@@ -47,7 +47,7 @@ The system consists of three main microservices:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/notes-microservices.git
+   git clone https://github.com/gianlucamazzeo/notes-microservices.git
    cd notes-microservices
    ```
 
