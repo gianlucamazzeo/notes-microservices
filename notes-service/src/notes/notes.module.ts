@@ -1,20 +1,12 @@
 import { Module } from '@nestjs/common';
 import { NotesController } from './notes.controller';
 import { NotesService } from './notes.service';
-import { ClientsModule, Transport } from '@nestjs/microservices';
+import { MongooseModule } from '@nestjs/mongoose';
+import { Note, NoteSchema } from './schemas/note.schema';
 
 @Module({
   imports: [
-    ClientsModule.register([
-      {
-        name: 'NOTES_SERVICE',
-        transport: Transport.TCP,
-        options: {
-          host: 'localhost',
-          port: 3002,
-        },
-      },
-    ]),
+    MongooseModule.forFeature([{ name: Note.name, schema: NoteSchema }]),
   ],
   controllers: [NotesController],
   providers: [NotesService],

@@ -10,7 +10,6 @@ export class UsersController {
 
   @MessagePattern({ cmd: 'register_user' })
   async register(@Payload() createUserDto: CreateUserDto) {
-    console.log('invia request ');
     return this.usersService.create(createUserDto);
   }
 

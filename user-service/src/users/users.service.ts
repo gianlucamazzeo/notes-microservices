@@ -77,7 +77,10 @@ export class UsersService {
     return user;
   }
 
-  async update(id: string, updateData: Partial<CreateUserDto>): Promise<UserDocument> {
+  async update(
+    id: string,
+    updateData: Partial<CreateUserDto>,
+  ): Promise<UserDocument> {
     const user = await this.findById(id);
     
     // Se c'è una nuova password, hashala
